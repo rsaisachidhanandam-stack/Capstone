@@ -1,0 +1,20 @@
+const mongoose = require('mongoose');
+const User = require('./server/models/User.model');
+const dotenv = require('dotenv');
+
+dotenv.config({ path: './server/.env' });
+
+const listUsers = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    const users = await User.find({}, 'email role name');
+    console.log('Users in DB:');
+    users.forEach(u => console.log(`${u.email} - ${u.role} (${u.name})`));
+    process.exit(0);
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
+  }
+};
+
+listUsers();

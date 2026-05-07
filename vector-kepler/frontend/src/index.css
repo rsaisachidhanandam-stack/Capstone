@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Basic global styling */
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Light theme variables */
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+}
+
+/* Dark theme variables */
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+}
